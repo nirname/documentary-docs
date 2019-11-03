@@ -10,9 +10,7 @@ with built-in Markdown, Gravhiz and Sequence diagrams support.
 
 ## Content
 
-* [Installation](#installation)
-* [Structure](#structure)
-* [Usage](#usage)
+* [Installation and Usage](#installation-and-usage)
 * [Examples](#examples)
 
 Read through [future development plans](todo.md).
