@@ -9,8 +9,8 @@ This is a static website generator on top of Pandoc and Make
 with built-in Markdown, Gravhiz and Sequence diagrams support.
 
 * [Getting Started](#getting-started)
-* [Examples](#examples)
 * [Reveal.js](#reveal.js)
+* [Examples](#examples)
 * [Local installation](#local-installation)
 
 Read through [future development plans](todo.md).
@@ -59,9 +59,27 @@ open docs/sample.html
 
 As simple as that. Check other [examples](#examples) below.
 
+## Reveal.js
+
+If you would like to build reveal.js presentation, install reveal.js first.
+Do this in your `website` folder:
+
+```bash
+wget https://github.com/hakimel/reveal.js/archive/master.tar.gz
+tar -xzvf master.tar.gz
+mv reveal.js-master reveal.js
+rm master.tar.gz
+```
+
+Then build presentation:
+
+```bash
+docker run --rm -v $(pwd):/project nirname/documentary documentary TO=revealjs
+```
+
 ## Examples
 
-Just copy and paste these examples to your `source/sample.md` file
+Just copy and paste these examples to your `source/sample.md` file.
 
 ### Inline images
 
@@ -139,24 +157,6 @@ So as to change layout of the graph change source file extension, e.g. `formats.
 Don't forget to change link to the graph to `![Supported Formats](formats.circo)`.
 
 ---
-
-## Reveal.js
-
-If you would like to build reveal.js presentation, install reveal.js first.
-Do this in your `website` folder:
-
-```bash
-wget https://github.com/hakimel/reveal.js/archive/master.tar.gz
-tar -xzvf master.tar.gz
-mv reveal.js-master reveal.js
-rm master.tar.gz
-```
-
-Then build presentation:
-
-```bash
-docker run --rm -v $(pwd):/project nirname/documentary documentary TO=revealjs
-```
 
 ## Local installation
 

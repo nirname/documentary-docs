@@ -2,20 +2,27 @@
 
 What has been done so far and what is planned to do.
 
-## Diagrams & Plots
+## Implemented Features
+
+* Pandoc
+* Graphviz
+* Seqdiag
+* Docker
+* Reveal.js
+
+## Add Diagrams & Plots
 
 * Gantt
-* CSV 2 md tables
+* CSV 2 markdown tables
 * Gnuplot
 * https://github.com/hertogp/imagine
 * https://github.com/raghur/mermaid-filter
 
-## Improvements
+## Make Improvements
 
 (ordered by priority)
 
 * ~~Copy other files (png, svg, css, etc, that doesn't have to be compiled)~~
-* Reveal.js as a part of makefile
 * Include another file in markdown
 * Relative paths as a filter
 * Remove `title` command, use pure Markdown instead
@@ -26,7 +33,6 @@ What has been done so far and what is planned to do.
 * Generate index page automatically (as a filter)
 * Add pallets
 * Create bootstrap script for installation
-* Run in Docker
 * ~~Use `rake` instead of `make`~~ ?
 
 # Links
