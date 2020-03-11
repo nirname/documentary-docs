@@ -24,18 +24,18 @@ What has been done so far and what is planned to do.
 
 (ordered by priority)
 
-* See logs from Docker output
-* Add watcher
+* ~~Add watcher~~
+* ~~See logs from Docker output~~
+* ~~Relative paths as a filter~~
+* Replace sed with pandoc filters
 * Copy other files that doesn't have to be compiled
 * Include another file in markdown
-* Replace sed with pandoc filters
 * Remove `title` command, use pure Markdown instead
 * Keep graphviz layout name as part of svg extension
 * Use `--toc` option generate links to anchors
 * Generate index page automatically (as a filter)
 * Add pallets
 * Create bootstrap script for installation
-* ~~Relative paths as a filter~~
 
 # Links
 
