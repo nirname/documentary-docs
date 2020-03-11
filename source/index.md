@@ -19,21 +19,47 @@ Read through [future development plans](todo.md).
 
 ### Docker
 
-Install Docker. Then
+Install Docker. Then:
 
 ```bash
 docker pull nirname/documentary
 ```
 
-Create new folder for you website, put something under `source` subfolder and compile:
+Create new folder for you website
 
 ```
 mkdir website && cd website
-touch "# Hello" > source/index.md
+```
+
+Create something under `source` subfolder:
+
+```
+touch source/sample.md
+```
+
+Copy and paste this to `source/sample.md`
+
+````
+# Hello
+
+```dot
+digraph {
+  A -> B
+}
+```
+````
+
+And build
+
+```
 docker run -v "`pwd`:/project" -it --rm nirname/documentary documentary
 ```
 
-Your will found compiled output under `docs` subfolder.
+Your will found compiled output under `docs` subfolder. Check the result:
+
+```
+open docs/sample.html
+```
 
 As simple as that.
 
