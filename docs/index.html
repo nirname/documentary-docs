@@ -82,7 +82,7 @@ digraph {
 <p>Your will find compiled output under <code>docs</code> subfolder. Check the result:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">open</span> docs/sample.html</code></pre></div>
 <p>As simple as that. Check other <a href="#examples">examples</a> below.</p>
-<p><strong>Recommendations</strong></p>
+<p><strong>Build script</strong></p>
 <p>To shrink build command create <code>build.sh</code> file directly in your <code>website</code> folder and allow its execution:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">touch</span> build.sh
 <span class="fu">chmod</span> +x build.sh</code></pre></div>
@@ -90,7 +90,9 @@ digraph {
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/usr/bin/env bash</span>
 <span class="ex">docker</span> run --rm -v <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/project nirname/documentary documentary</code></pre></div>
 <p>Then use <code>./build.sh</code> command.</p>
-<p>Automatic watchers will be added later.</p>
+<p><strong>Watcher</strong></p>
+<p>So as to continuously update docs during making changes start watcher:</p>
+<pre><code>docker run -it --rm -v $(pwd):/project nirname/documentary watcher</code></pre>
 <h2 id="add-some-styles">Add Some Styles</h2>
 <p>All the <code>*.css</code> files will be automatically included.</p>
 <p>Download <a href="https://github.com/sindresorhus/github-markdown-css/blob/gh-pages/github-markdown.css">Github markdown styles</a>, for instance, and put them under <code>source</code> folder. Then build.</p>
@@ -102,6 +104,8 @@ digraph {
 <span class="fu">rm</span> master.tar.gz</code></pre></div>
 <p>Then build presentation:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">docker</span> run --rm -v <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/project nirname/documentary documentary TO=revealjs</code></pre></div>
+<p>If you are using watcher:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">docker</span> run -it --rm -v <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/project nirname/documentary watcher TO=revealjs</code></pre></div>
 <h2 id="examples">Examples</h2>
 <h3 id="embedded-images">Embedded images</h3>
 <p>To create embedded graph add specific class to a code block. Supported class name must coinside with one of Graphviz extenions: <code>dot neato fdp sfdp twopi circo</code></p>

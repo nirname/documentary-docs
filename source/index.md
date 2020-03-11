@@ -60,7 +60,7 @@ open docs/sample.html
 
 As simple as that. Check other [examples](#examples) below.
 
-**Recommendations**
+**Build script**
 
 To shrink build command create `build.sh` file directly in your `website` folder
 and allow its execution:
@@ -79,7 +79,13 @@ docker run --rm -v $(pwd):/project nirname/documentary documentary
 
 Then use `./build.sh` command.
 
-Automatic watchers will be added later.
+**Watcher**
+
+So as to continuously update docs during making changes start watcher:
+
+```
+docker run -it --rm -v $(pwd):/project nirname/documentary watcher
+```
 
 ## Add Some Styles
 
@@ -104,6 +110,12 @@ Then build presentation:
 
 ```bash
 docker run --rm -v $(pwd):/project nirname/documentary documentary TO=revealjs
+```
+
+If you are using watcher:
+
+```bash
+docker run -it --rm -v $(pwd):/project nirname/documentary watcher TO=revealjs
 ```
 
 ## Examples
