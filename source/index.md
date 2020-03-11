@@ -123,7 +123,7 @@ seqdiag {
 
 It might be convenient to keep your graph as a separate file in case it is too big for inline usage.
 
-To add external graph, put in your project `layouts.neato` with some valid graph inside and write a link to it:
+To add external graph, put in your project `formats.neato` with some valid graph inside and write a link to it:
 
 ```markdown
 ![Supported Formats](formats.neato)
