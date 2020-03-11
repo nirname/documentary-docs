@@ -8,16 +8,14 @@ header-includes:
 This is a static website generator on top of Pandoc and Make
 with built-in Markdown, Gravhiz and Sequence diagrams support.
 
-## Content
-
-* [Installation and Usage](#installation-and-usage)
+* [Getting Started](#getting-started)
 * [Examples](#examples)
+* [Reveal.js](#reveal.js)
+* [Local installation](#local-installation)
 
 Read through [future development plans](todo.md).
 
-## Installation and Usage
-
-### Docker
+## Getting started
 
 Install Docker. Then:
 
@@ -25,133 +23,45 @@ Install Docker. Then:
 docker pull nirname/documentary
 ```
 
-Create new folder for you website
+Create a new folder for your website:
 
-```
+```bash
 mkdir website && cd website
 ```
 
-Create something under `source` subfolder:
+Create `sample.md` file under `source` subfolder:
 
-```
+```bash
 touch source/sample.md
 ```
 
-Copy and paste this to `source/sample.md`
+Copy and paste this to `source/sample.md`:
 
-````
-# Hello
+    # Hello
 
-```dot
-digraph {
-  A -> B
-}
-```
-````
+    ```dot
+    digraph {
+      A -> B
+    }
+    ```
 
-And build
+And build:
 
-```
+```bash
 docker run -v "`pwd`:/project" -it --rm nirname/documentary documentary
 ```
 
 Your will found compiled output under `docs` subfolder. Check the result:
 
-```
+```bash
 open docs/sample.html
 ```
 
-As simple as that.
-
-### Local
-
-Clone this project and remove `.git` folder:
-
-```bash
-git clone git@github.com:/nirname/documentary.git && cd documentary && rm -rf .git
-```
-
-... or [download it](https://github.com/nirname/documentary/archive/master.zip).
-
-Install the requirements as follows.
-
-Pip:
-
-```shell
-https://pip.readthedocs.io/en/stable/installing/
-```
-
-Ubuntu:
-
-
-```shell
-apt-get install build-essential pandoc graphviz
-pip install pandocfilters seqdiag
-```
-
-MacOS:
-
-```shell
-brew install build-essential pandoc graphviz
-pip install pandocfilters seqdiag
-```
-
-Use `sudo` if needed.
-
-
-Put some `*.md`, `*.css` and `*.dot` files under `source/` folder, run:
-
-```shell
-make
-```
-
-Everything compiled will be found under `docs/` folder.
-
-To skip trhough website run
-
-```shell
-make serve
-```
-
-and open `localhost:8000` in your browser.
-
-To watch changes automatically run:
-
-```
-make watch
-```
-
-in antoher terminal.
-
-To remove `docs` folder completely, run:
-
-```
-make clean
-```
-This is equal to `rm -rf docs/*`
+As simple as that. Check other [examples](#examples) below.
 
 ## Examples
 
-### reveal.js
-
-```bash
-rm -rf reveal.js
-wget https://github.com/hakimel/reveal.js/archive/master.tar.gz
-tar -xzvf master.tar.gz
-mv reveal.js-master reveal.js
-rm master.tar.gz
-```
-
-Replace
-
-```
---to html5
-```
-in `makefile` to
-
-```
---to revealjs
-```
+Just copy and paste these examples to your `source/sample.md` file
 
 ### Inline images
 
@@ -227,3 +137,90 @@ Layout of the image will be derived automatically by source file extension.
 
 So as to change layout of the graph change source file extension, e.g. `formats.circo`.
 Don't forget to change link to the graph to `![Supported Formats](formats.circo)`.
+
+---
+
+## Reveal.js
+
+If you would like to build reveal.js presentation, install reveal.js first.
+Do this in your `website` folder:
+
+```bash
+wget https://github.com/hakimel/reveal.js/archive/master.tar.gz
+tar -xzvf master.tar.gz
+mv reveal.js-master reveal.js
+rm master.tar.gz
+```
+
+Then build presentation:
+
+```bash
+docker run --rm -v $(pwd):/project nirname/documentary documentary TO=revealjs
+```
+
+## Local installation
+
+Clone this project and remove `.git` folder:
+
+```bash
+git clone git@github.com:/nirname/documentary.git && cd documentary && rm -rf .git
+```
+
+... or [download it](https://github.com/nirname/documentary/archive/master.zip).
+
+Install the requirements as follows.
+
+Pip:
+
+```shell
+https://pip.readthedocs.io/en/stable/installing/
+```
+
+Ubuntu:
+
+
+```shell
+apt-get install build-essential pandoc graphviz
+pip install pandocfilters seqdiag
+```
+
+MacOS:
+
+```shell
+brew install build-essential pandoc graphviz
+pip install pandocfilters seqdiag
+```
+
+Use `sudo` if needed.
+
+
+Put some `*.md`, `*.css` and `*.dot` files under `source/` folder, run:
+
+```shell
+make
+```
+
+Everything compiled will be found under `docs/` folder.
+
+To serve your docs via website run:
+
+```shell
+make serve
+```
+
+and open `localhost:8000` in your browser.
+
+To watch changes automatically run:
+
+```
+make watch
+```
+
+in antoher terminal.
+
+To remove `docs` folder completely, run:
+
+```
+make clean
+```
+This is equal to `rm -rf docs/*`

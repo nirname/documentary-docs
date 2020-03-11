@@ -54,21 +54,21 @@ code > span. { color: #1f1c1b; } /* Normal */
 <h1 class="title">Documentary</h1>
 </div>
 <p>This is a static website generator on top of Pandoc and Make with built-in Markdown, Gravhiz and Sequence diagrams support.</p>
-<h2 id="content">Content</h2>
 <ul>
-<li><a href="#installation-and-usage">Installation and Usage</a></li>
+<li><a href="#getting-started">Getting Started</a></li>
 <li><a href="#examples">Examples</a></li>
+<li><a href="#reveal.js">Reveal.js</a></li>
+<li><a href="#local-installation">Local installation</a></li>
 </ul>
 <p>Read through <a href="todo.html">future development plans</a>.</p>
-<h2 id="installation-and-usage">Installation and Usage</h2>
-<h3 id="docker">Docker</h3>
+<h2 id="getting-started">Getting started</h2>
 <p>Install Docker. Then:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">docker</span> pull nirname/documentary</code></pre></div>
-<p>Create new folder for you website</p>
-<pre><code>mkdir website &amp;&amp; cd website</code></pre>
-<p>Create something under <code>source</code> subfolder:</p>
-<pre><code>touch source/sample.md</code></pre>
-<p>Copy and paste this to <code>source/sample.md</code></p>
+<p>Create a new folder for your website:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">mkdir</span> website <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> website</code></pre></div>
+<p>Create <code>sample.md</code> file under <code>source</code> subfolder:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">touch</span> source/sample.md</code></pre></div>
+<p>Copy and paste this to <code>source/sample.md</code>:</p>
 <pre><code># Hello
 
 ```dot
@@ -76,48 +76,13 @@ digraph {
   A -&gt; B
 }
 ```</code></pre>
-<p>And build</p>
-<pre><code>docker run -v &quot;`pwd`:/project&quot; -it --rm nirname/documentary documentary</code></pre>
+<p>And build:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">docker</span> run -v <span class="st">&quot;</span><span class="kw">`</span><span class="bu">pwd</span><span class="kw">`</span><span class="st">:/project&quot;</span> -it --rm nirname/documentary documentary</code></pre></div>
 <p>Your will found compiled output under <code>docs</code> subfolder. Check the result:</p>
-<pre><code>open docs/sample.html</code></pre>
-<p>As simple as that.</p>
-<h3 id="local">Local</h3>
-<p>Clone this project and remove <code>.git</code> folder:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> clone git@github.com:/nirname/documentary.git <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> documentary <span class="kw">&amp;&amp;</span> <span class="fu">rm</span> -rf .git</code></pre></div>
-<p>... or <a href="https://github.com/nirname/documentary/archive/master.zip">download it</a>.</p>
-<p>Install the requirements as follows.</p>
-<p>Pip:</p>
-<pre class="shell"><code>https://pip.readthedocs.io/en/stable/installing/</code></pre>
-<p>Ubuntu:</p>
-<pre class="shell"><code>apt-get install build-essential pandoc graphviz
-pip install pandocfilters seqdiag</code></pre>
-<p>MacOS:</p>
-<pre class="shell"><code>brew install build-essential pandoc graphviz
-pip install pandocfilters seqdiag</code></pre>
-<p>Use <code>sudo</code> if needed.</p>
-<p>Put some <code>*.md</code>, <code>*.css</code> and <code>*.dot</code> files under <code>source/</code> folder, run:</p>
-<pre class="shell"><code>make</code></pre>
-<p>Everything compiled will be found under <code>docs/</code> folder.</p>
-<p>To skip trhough website run</p>
-<pre class="shell"><code>make serve</code></pre>
-<p>and open <code>localhost:8000</code> in your browser.</p>
-<p>To watch changes automatically run:</p>
-<pre><code>make watch</code></pre>
-<p>in antoher terminal.</p>
-<p>To remove <code>docs</code> folder completely, run:</p>
-<pre><code>make clean</code></pre>
-<p>This is equal to <code>rm -rf docs/*</code></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">open</span> docs/sample.html</code></pre></div>
+<p>As simple as that. Check other <a href="#examples">examples</a> below.</p>
 <h2 id="examples">Examples</h2>
-<h3 id="reveal.js">reveal.js</h3>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">rm</span> -rf reveal.js
-<span class="fu">wget</span> https://github.com/hakimel/reveal.js/archive/master.tar.gz
-<span class="fu">tar</span> -xzvf master.tar.gz
-<span class="fu">mv</span> reveal.js-master reveal.js
-<span class="fu">rm</span> master.tar.gz</code></pre></div>
-<p>Replace</p>
-<pre><code>--to html5</code></pre>
-<p>in <code>makefile</code> to</p>
-<pre><code>--to revealjs</code></pre>
+<p>Just copy and paste these examples to your <code>source/sample.md</code> file</p>
 <h3 id="inline-images">Inline images</h3>
 <p>To create embedded graph add specific class to a code block.</p>
 <hr />
@@ -266,5 +231,40 @@ seqdiag {
 </div>
 <p>Layout of the image will be derived automatically by source file extension. <code>formats.neato</code> will be converted to <code>formats.svg</code> and links to it will be automatically changed as well.</p>
 <p>So as to change layout of the graph change source file extension, e.g. <code>formats.circo</code>. Don't forget to change link to the graph to <code>![Supported Formats](formats.circo)</code>.</p>
+<hr />
+<h2 id="reveal.js">Reveal.js</h2>
+<p>If you would like to build reveal.js presentation, install reveal.js first. Do this in your <code>website</code> folder:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">wget</span> https://github.com/hakimel/reveal.js/archive/master.tar.gz
+<span class="fu">tar</span> -xzvf master.tar.gz
+<span class="fu">mv</span> reveal.js-master reveal.js
+<span class="fu">rm</span> master.tar.gz</code></pre></div>
+<p>Then build presentation:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">docker</span> run --rm -v <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/project nirname/documentary documentary TO=revealjs</code></pre></div>
+<h2 id="local-installation">Local installation</h2>
+<p>Clone this project and remove <code>.git</code> folder:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> clone git@github.com:/nirname/documentary.git <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> documentary <span class="kw">&amp;&amp;</span> <span class="fu">rm</span> -rf .git</code></pre></div>
+<p>... or <a href="https://github.com/nirname/documentary/archive/master.zip">download it</a>.</p>
+<p>Install the requirements as follows.</p>
+<p>Pip:</p>
+<pre class="shell"><code>https://pip.readthedocs.io/en/stable/installing/</code></pre>
+<p>Ubuntu:</p>
+<pre class="shell"><code>apt-get install build-essential pandoc graphviz
+pip install pandocfilters seqdiag</code></pre>
+<p>MacOS:</p>
+<pre class="shell"><code>brew install build-essential pandoc graphviz
+pip install pandocfilters seqdiag</code></pre>
+<p>Use <code>sudo</code> if needed.</p>
+<p>Put some <code>*.md</code>, <code>*.css</code> and <code>*.dot</code> files under <code>source/</code> folder, run:</p>
+<pre class="shell"><code>make</code></pre>
+<p>Everything compiled will be found under <code>docs/</code> folder.</p>
+<p>To serve your docs via website run:</p>
+<pre class="shell"><code>make serve</code></pre>
+<p>and open <code>localhost:8000</code> in your browser.</p>
+<p>To watch changes automatically run:</p>
+<pre><code>make watch</code></pre>
+<p>in antoher terminal.</p>
+<p>To remove <code>docs</code> folder completely, run:</p>
+<pre><code>make clean</code></pre>
+<p>This is equal to <code>rm -rf docs/*</code></p>
 </body>
 </html>
