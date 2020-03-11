@@ -32,7 +32,7 @@ mkdir website && cd website
 Create `sample.md` file under `source` subfolder:
 
 ```bash
-touch source/sample.md
+mkdir source && touch source/sample.md
 ```
 
 Copy and paste this to `source/sample.md`:
