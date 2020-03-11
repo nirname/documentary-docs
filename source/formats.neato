@@ -2,5 +2,5 @@ digraph Layouts {
   node [shape="plaintext"]
   edge [len=1.1]
   graphviz -> { dot neato fdp sfdp twopi circo }
-  diagram -> { seqdiag } # blockdiag
+  blockdiag -> { seqdiag } [len=1.5]
 }

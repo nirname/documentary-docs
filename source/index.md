@@ -62,7 +62,7 @@ As simple as that. Check other [examples](#examples) below.
 ## Reveal.js
 
 If you would like to build reveal.js presentation, install reveal.js first.
-Do this in your `website` folder:
+Do this under `website/docs` folder:
 
 ```bash
 wget https://github.com/hakimel/reveal.js/archive/master.tar.gz
@@ -79,40 +79,61 @@ docker run --rm -v $(pwd):/project nirname/documentary documentary TO=revealjs
 
 ## Examples
 
-Just copy and paste these examples to your `source/sample.md` file.
-
-### Inline images
+### Embedded images
 
 To create embedded graph add specific class to a code block.
+Supported class name must coinside with one of Graphviz extenions:
+`dot neato fdp sfdp twopi circo`
 
----
+Use `seqdiag` class to build sequence diagramm.
+
+Copy this code to your `source/sample.md` file:
+
+    **Graphviz**
+
+    ```dot
+    digraph workflow {
+      node [shape="rect" width=1]
+      { Markdown, Graphviz, Sequence } -> HTML
+    }
+    ```
+
+    **Sequence diagrams**
+
+    ```seqdiag
+    seqdiag {
+      make; pandoc; tool [label = "graphviz/seqdiag"];
+      make -> pandoc         [label = "markdown"];
+              pandoc -> tool [label = "graph"];
+              pandoc <- tool [label = "svg"];
+      make <- pandoc         [label = "html"];
+      make ->           tool [label = "graph"];
+      make <-           tool [label = "svg"];
+    }
+    ```
+
+Then build:
+
+```
+docker run -v "`pwd`:/project" -it --rm nirname/documentary documentary
+```
+
+Result:
 
 **Graphviz**
 
-````
 ```dot
 digraph workflow {
   node [shape="rect" width=1]
-  { Markdown, Graphviz, Sequence } -> HTML
+  { markdown, graphviz, seqdiag } -> html
 }
 ```
-````
-
-```dot
-digraph workflow {
-  node [shape="rect" width=1]
-  { Markdown, Graphviz, Sequence } -> HTML
-}
-```
-
----
 
 **Sequence diagrams**
 
-````
 ```seqdiag
 seqdiag {
-  make; pandoc; tool;
+  make; pandoc; tool [label = "graphviz/seqdiag"];
   make -> pandoc         [label = "markdown"];
           pandoc -> tool [label = "graph"];
           pandoc <- tool [label = "svg"];
@@ -121,32 +142,34 @@ seqdiag {
   make <-           tool [label = "svg"];
 }
 ```
-````
-
-```seqdiag
-seqdiag {
-  make; pandoc; tool;
-  make -> pandoc         [label = "markdown"];
-          pandoc -> tool [label = "graph"];
-          pandoc <- tool [label = "svg"];
-  make <- pandoc         [label = "html"];
-  make ->           tool [label = "graph"];
-  make <-           tool [label = "svg"];
-}
-```
-
----
 
 ### Standalone images
 
 It might be convenient to keep your graph as a separate file in case it is too big for inline usage.
 
-To add external graph, put in your project `formats.neato` with some valid graph inside and write a link to it:
+To add external graph, create file with extension that reflects type of graph you would like to get.
+For example, create `formats.neato`.
 
-```markdown
-![Supported Formats](formats.neato)
-
+```bash
+touch source/formats.neato
 ```
+
+Copy and paste this to `formats.neato`:
+
+    ```neato
+    digraph Layouts {
+      node [shape="plaintext"]
+      edge [len=1.1]
+      graphviz -> { dot neato fdp sfdp twopi circo }
+      blockdiag -> { seqdiag } [len=1.5]
+    }
+    ```
+
+Paste following code to your `source/sample.md`:
+
+    ![Supported Formats](formats.neato)
+
+Result:
 
 ![Supported Formats](formats.neato)
 
@@ -155,8 +178,6 @@ Layout of the image will be derived automatically by source file extension.
 
 So as to change layout of the graph change source file extension, e.g. `formats.circo`.
 Don't forget to change link to the graph to `![Supported Formats](formats.circo)`.
-
----
 
 ## Local installation
 
