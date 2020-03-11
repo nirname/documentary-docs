@@ -9,6 +9,7 @@ This is a static website generator on top of Pandoc and Make
 with built-in Markdown, Gravhiz and Sequence diagrams support.
 
 * [Getting Started](#getting-started)
+* [Add Some Styles](#add-some-styles)
 * [Reveal.js](#reveal.js)
 * [Examples](#examples)
 * [Local installation](#local-installation)
@@ -80,7 +81,7 @@ Then use `./build.sh` command.
 
 Automatic watchers will be added later.
 
-## Add some styles
+## Add Some Styles
 
 All the `*.css` files will be automatically included.
 
@@ -89,7 +90,7 @@ and put them under `source` folder. Then build.
 
 ## Reveal.js
 
-If you would like to build reveal.js presentation, install reveal.js first.
+If you would like to build [reveal.js](https://revealjs.com) presentation, install reveal.js first.
 Do this under `website/docs` folder:
 
 ```bash
