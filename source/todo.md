@@ -18,22 +18,22 @@ What has been done so far and what is planned to do.
 * https://github.com/hertogp/imagine
 * https://github.com/raghur/mermaid-filter
 
-## Make Improvements
+## Make Other Improvements
 
 (ordered by priority)
 
-* ~~Copy other files (png, svg, css, etc, that doesn't have to be compiled)~~
+* See logs from Docker output
+* Add watcher
+* Copy other files that doesn't have to be compiled
 * Include another file in markdown
-* Relative paths as a filter
+* Replace sed with pandoc filters
 * Remove `title` command, use pure Markdown instead
 * Keep graphviz layout name as part of svg extension
-* Replace sed with pandoc filters
 * Use `--toc` option generate links to anchors
-* Another watcher
 * Generate index page automatically (as a filter)
 * Add pallets
 * Create bootstrap script for installation
-* ~~Use `rake` instead of `make`~~ ?
+* ~~Relative paths as a filter~~
 
 # Links
 

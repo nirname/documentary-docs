@@ -45,7 +45,7 @@ Copy and paste this to `source/sample.md`:
     }
     ```
 
-And build:
+Create:
 
 ```bash
 docker run -v "`pwd`:/project" -it --rm nirname/documentary documentary
@@ -58,6 +58,34 @@ open docs/sample.html
 ```
 
 As simple as that. Check other [examples](#examples) below.
+
+**Recommendations**
+
+To shrink build command create `build.sh` file directly in your `website` folder
+and allow its execution:
+
+```bash
+touch build.sh
+chmod +x build.sh
+```
+
+Put the following code inside:
+
+```bash
+#!/usr/bin/env bash
+docker run --rm -v $(pwd):/project nirname/documentary documentary
+```
+
+Then use `./build.sh` command.
+
+Automatic watchers will be added later.
+
+## Add some styles
+
+All the `*.css` files will be automatically included.
+
+Download [Github markdown styles](https://github.com/sindresorhus/github-markdown-css/blob/gh-pages/github-markdown.css), for instance,
+and put them under `source` folder. Then build.
 
 ## Reveal.js
 
@@ -174,7 +202,7 @@ Result:
 ![Supported Formats](formats.neato)
 
 Layout of the image will be derived automatically by source file extension.
-`formats.neato` will be converted to `formats.svg` and links to it will be automatically changed as well.
+`formats.neato` will be converted to `formats.svg` and all the links to it will be automatically changed in resulting HTML as well.
 
 So as to change layout of the graph change source file extension, e.g. `formats.circo`.
 Don't forget to change link to the graph to `![Supported Formats](formats.circo)`.
