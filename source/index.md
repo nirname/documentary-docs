@@ -51,7 +51,7 @@ And build:
 docker run -v "`pwd`:/project" -it --rm nirname/documentary documentary
 ```
 
-Your will found compiled output under `docs` subfolder. Check the result:
+Your will find compiled output under `docs` subfolder. Check the result:
 
 ```bash
 open docs/sample.html
@@ -200,7 +200,7 @@ Put some `*.md`, `*.css` and `*.dot` files under `source/` folder, run:
 make
 ```
 
-Everything compiled will be found under `docs/` folder.
+Everything compiled will be under `docs/` folder.
 
 To serve your docs via website run:
 

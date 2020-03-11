@@ -78,7 +78,7 @@ digraph {
 ```</code></pre>
 <p>And build:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">docker</span> run -v <span class="st">&quot;</span><span class="kw">`</span><span class="bu">pwd</span><span class="kw">`</span><span class="st">:/project&quot;</span> -it --rm nirname/documentary documentary</code></pre></div>
-<p>Your will found compiled output under <code>docs</code> subfolder. Check the result:</p>
+<p>Your will find compiled output under <code>docs</code> subfolder. Check the result:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">open</span> docs/sample.html</code></pre></div>
 <p>As simple as that. Check other <a href="#examples">examples</a> below.</p>
 <h2 id="examples">Examples</h2>
@@ -256,7 +256,7 @@ pip install pandocfilters seqdiag</code></pre>
 <p>Use <code>sudo</code> if needed.</p>
 <p>Put some <code>*.md</code>, <code>*.css</code> and <code>*.dot</code> files under <code>source/</code> folder, run:</p>
 <pre class="shell"><code>make</code></pre>
-<p>Everything compiled will be found under <code>docs/</code> folder.</p>
+<p>Everything compiled will be under <code>docs/</code> folder.</p>
 <p>To serve your docs via website run:</p>
 <pre class="shell"><code>make serve</code></pre>
 <p>and open <code>localhost:8000</code> in your browser.</p>
