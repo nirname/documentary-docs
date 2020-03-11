@@ -92,7 +92,8 @@ digraph {
 <p>Then use <code>./build.sh</code> command.</p>
 <p><strong>Watcher</strong></p>
 <p>So as to continuously update docs during making changes start watcher:</p>
-<pre><code>docker run -it --rm -v $(pwd):/project nirname/documentary watcher</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/usr/bin/env bash</span>
+<span class="ex">docker</span> run -it --rm -v <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/project nirname/documentary watcher</code></pre></div>
 <h2 id="add-some-styles">Add Some Styles</h2>
 <p>All the <code>*.css</code> files will be automatically included.</p>
 <p>Download <a href="https://github.com/sindresorhus/github-markdown-css/blob/gh-pages/github-markdown.css">Github markdown styles</a>, for instance, and put them under <code>source</code> folder. Then build.</p>

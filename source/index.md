@@ -83,7 +83,8 @@ Then use `./build.sh` command.
 
 So as to continuously update docs during making changes start watcher:
 
-```
+```bash
+#!/usr/bin/env bash
 docker run -it --rm -v $(pwd):/project nirname/documentary watcher
 ```
 
