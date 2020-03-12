@@ -30,6 +30,7 @@ Create a new folder for your website:
 mkdir website && cd website
 ```
 
+
 Create `sample.md` file under `source` subfolder:
 
 ```bash
@@ -136,7 +137,7 @@ Copy this code to your `source/sample.md` file:
     ```dot
     digraph workflow {
       node [shape="rect" width=1]
-      { Markdown, Graphviz, Sequence } -> HTML
+      { Markdown, Graphviz, Sequence } -> html
     }
     ```
 

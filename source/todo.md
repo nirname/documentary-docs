@@ -25,6 +25,7 @@ What has been done so far and what is planned to do.
 
 (ordered by priority)
 
+* Remove files automatically
 * ~~Add watcher~~
 * ~~See logs from Docker output~~
 * ~~Relative paths as a filter~~
