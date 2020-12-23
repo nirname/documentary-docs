@@ -18,52 +18,70 @@ Read through [future development plans](todo.md).
 
 ## Getting started
 
-Install Docker. Then:
+**Install Docker.**
 
-```bash
-docker pull nirname/documentary
-```
+1. **Create following folder structure for your website or presentation:**
 
-Create a new folder for your website:
-
-```bash
-mkdir website && cd website
-```
-
-
-Create `sample.md` file under `source` subfolder:
-
-```bash
-mkdir source && touch source/sample.md
-```
-
-Copy and paste this to `source/sample.md`:
-
-    # Hello
-
-    ```dot
-    digraph {
-      A -> B
-    }
+    ```
+    website
+    └── source
+        └── sample.md
     ```
 
-Create:
+    by using this command:
 
-```bash
-docker run -v "`pwd`:/project" -it --rm nirname/documentary documentary
-```
+    ```bash
+    mkdir -p website/source
+    touch website/source/sample.md
+    ```
 
-Your will find compiled output under `docs` subfolder. Check the result:
+2. **Copy and paste this to `source/sample.md`:**
 
-```bash
-open docs/sample.html
-```
+        <style>
+          svg {
+            width: 400px;
+          }
+        </style>
 
-As simple as that. Check other [examples](#examples) below.
+        # Hello
+
+        ## Graph
+
+        ```dot
+        digraph {
+          A -> B
+        }
+        ```
+
+        ## Sequence graph
+
+        ```seqdiag
+        seqdiag {
+          browser -> webserver [label = "GET /index.html"];
+          browser <-- webserver;
+        }
+        ```
+
+3. **Then build:**
+
+    ```bash
+    cd website
+    docker run --rm -v $(pwd):/project nirname/documentary documentary
+    ```
+
+    Your will find compiled output under `docs` subfolder. Check the result:
+
+    ```bash
+    open docs/sample.html
+    ```
+
+As simple as that.
+
+Check other [examples](#examples) below.
 
 **Build script**
 
-To shrink build command create `build.sh` file directly in your `website` folder
+To shrink build command create `build.sh` file directly under your `website` folder
 and allow its execution:
 
 ```bash
