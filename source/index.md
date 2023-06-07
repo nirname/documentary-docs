@@ -14,8 +14,6 @@ with built-in Markdown, Gravhiz and Sequence diagrams support.
 * [Examples](#examples)
 * [Local installation](#local-installation)
 
-Read through [future development plans](todo.md).
-
 ## Getting started
 
 **Install Docker.**
