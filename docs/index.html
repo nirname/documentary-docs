@@ -1,58 +1,91 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Documentary</title>
-  <style type="text/css">code{white-space: pre;}</style>
-  <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; background-color: #ffffff; color: #1f1c1b; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; background-color: #ffffff; color: #a0a0a0; border-right: 1px solid #a0a0a0; }
-td.sourceCode { padding-left: 5px; }
-pre, code { color: #1f1c1b; background-color: #ffffff; }
-code > span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
-code > span.dt { color: #0057ae; } /* DataType */
-code > span.dv { color: #b08000; } /* DecVal */
-code > span.bn { color: #b08000; } /* BaseN */
-code > span.fl { color: #b08000; } /* Float */
-code > span.cn { color: #aa5500; } /* Constant */
-code > span.ch { color: #924c9d; } /* Char */
-code > span.sc { color: #3daee9; } /* SpecialChar */
-code > span.st { color: #bf0303; } /* String */
-code > span.vs { color: #bf0303; } /* VerbatimString */
-code > span.ss { color: #ff5500; } /* SpecialString */
-code > span.im { color: #ff5500; } /* Import */
-code > span.co { color: #898887; } /* Comment */
-code > span.do { color: #607880; } /* Documentation */
-code > span.an { color: #ca60ca; } /* Annotation */
-code > span.cv { color: #0095ff; } /* CommentVar */
-code > span.ot { color: #006e28; } /* Other */
-code > span.fu { color: #644a9b; } /* Function */
-code > span.va { color: #0057ae; } /* Variable */
-code > span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #1f1c1b; } /* Operator */
-code > span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
-code > span.ex { color: #0095ff; font-weight: bold; } /* Extension */
-code > span.pp { color: #006e28; } /* Preprocessor */
-code > span.at { color: #0057ae; } /* Attribute */
-code > span.re { color: #0057ae; } /* RegionMarker */
-code > span.in { color: #b08000; } /* Information */
-code > span.wa { color: #bf0303; } /* Warning */
-code > span.al { color: #bf0303; font-weight: bold; } /* Alert */
-code > span.er { color: #bf0303; text-decoration: underline; } /* Error */
-code > span. { color: #1f1c1b; } /* Normal */
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #ffffff;
+        color: #a0a0a0;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
+    div.sourceCode
+      { color: #1f1c1b; background-color: #ffffff; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #1f1c1b; } /* Normal */
+    code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
+    code span.an { color: #ca60ca; } /* Annotation */
+    code span.at { color: #0057ae; } /* Attribute */
+    code span.bn { color: #b08000; } /* BaseN */
+    code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
+    code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #924c9d; } /* Char */
+    code span.cn { color: #aa5500; } /* Constant */
+    code span.co { color: #898887; } /* Comment */
+    code span.cv { color: #0095ff; } /* CommentVar */
+    code span.do { color: #607880; } /* Documentation */
+    code span.dt { color: #0057ae; } /* DataType */
+    code span.dv { color: #b08000; } /* DecVal */
+    code span.er { color: #bf0303; text-decoration: underline; } /* Error */
+    code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
+    code span.fl { color: #b08000; } /* Float */
+    code span.fu { color: #644a9b; } /* Function */
+    code span.im { color: #ff5500; } /* Import */
+    code span.in { color: #b08000; } /* Information */
+    code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
+    code span.op { color: #1f1c1b; } /* Operator */
+    code span.ot { color: #006e28; } /* Other */
+    code span.pp { color: #006e28; } /* Preprocessor */
+    code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
+    code span.sc { color: #3daee9; } /* SpecialChar */
+    code span.ss { color: #ff5500; } /* SpecialString */
+    code span.st { color: #bf0303; } /* String */
+    code span.va { color: #0057ae; } /* Variable */
+    code span.vs { color: #bf0303; } /* VerbatimString */
+    code span.wa { color: #bf0303; } /* Warning */
   </style>
-  <link rel="stylesheet" href="github-markdown.css" type="text/css" />
-  <meta name="keywords" content="pandoc static website compiler graph graphviz seqdiag sequence diagrams" /> <meta name="description" content="static website generator on top of pandoc and make with built-in markdown, gravhiz and sequence diagrams support" />
+  <link rel="stylesheet" href="github-markdown.css" />
+  <meta name="keywords" content="pandoc static website compiler graph graphviz seqdiag sequence diagrams" />
+  <meta name="description" content="static website generator on top of pandoc and make with built-in markdown, gravhiz and sequence diagrams support" />
 </head>
 <body>
-<div id="header">
+<header id="title-block-header">
 <h1 class="title">Documentary</h1>
-</div>
+</header>
 <p>This is a static website generator on top of Pandoc and Make with built-in Markdown, Gravhiz and Sequence diagrams support.</p>
 <ul>
 <li><a href="#getting-started">Getting Started</a></li>
@@ -61,75 +94,74 @@ code > span. { color: #1f1c1b; } /* Normal */
 <li><a href="#examples">Examples</a></li>
 <li><a href="#local-installation">Local installation</a></li>
 </ul>
-<p>Read through <a href="todo.html">future development plans</a>.</p>
 <h2 id="getting-started">Getting started</h2>
 <p><strong>Install Docker.</strong></p>
-<ol style="list-style-type: decimal">
+<ol type="1">
 <li><p><strong>Create following folder structure for your website or presentation:</strong></p>
 <pre><code>website
 └── source
     └── sample.md</code></pre>
 <p>by using this command:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">mkdir</span> -p website/source
-<span class="fu">touch</span> website/source/sample.md</code></pre></div></li>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="fu">mkdir</span> -p website/source</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="fu">touch</span> website/source/sample.html</span></code></pre></div></li>
 <li><p><strong>Copy and paste this to <code>source/sample.md</code>:</strong></p>
-<pre><code>&lt;style&gt;
-  svg {
-    width: 400px;
-  }
-&lt;/style&gt;
+<pre><code> &lt;style&gt;
+   svg {
+     width: 400px;
+   }
+ &lt;/style&gt;
 
-# Hello
+ # Hello
 
-## Graph
+ ## Graph
 
-```dot
-digraph {
-  A -&gt; B
-}
-```
+ ```dot
+ digraph {
+   A -&gt; B
+ }
+ ```
 
-## Sequence graph
+ ## Sequence graph
 
-```seqdiag
-seqdiag {
-  browser -&gt; webserver [label = &quot;GET /index.html&quot;];
-  browser &lt;-- webserver;
-}
-```</code></pre></li>
+ ```seqdiag
+ seqdiag {
+   browser -&gt; webserver [label = &quot;GET /index.html&quot;];
+   browser &lt;-- webserver;
+ }
+ ```</code></pre></li>
 <li><p><strong>Then build:</strong></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">cd</span> website
-<span class="ex">docker</span> run --rm -v <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/project nirname/documentary documentary</code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="bu">cd</span> website</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="ex">docker</span> run --rm -v <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/project nirname/documentary documentary</span></code></pre></div>
 <p>Your will find compiled output under <code>docs</code> subfolder. Check the result:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">open</span> docs/sample.html</code></pre></div></li>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="ex">open</span> docs/sample.html</span></code></pre></div></li>
 </ol>
 <p>As simple as that.</p>
 <p>Check other <a href="#examples">examples</a> below.</p>
 <p><strong>Build script</strong></p>
 <p>To shrink build command create <code>build.sh</code> file directly under your <code>website</code> folder and allow its execution:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">touch</span> build.sh
-<span class="fu">chmod</span> +x build.sh</code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="fu">touch</span> build.sh</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="fu">chmod</span> +x build.sh</span></code></pre></div>
 <p>Put the following code inside:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/usr/bin/env bash</span>
-<span class="ex">docker</span> run --rm -v <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/project nirname/documentary documentary</code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="co">#!/usr/bin/env bash</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a><span class="ex">docker</span> run --rm -v <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/project nirname/documentary documentary</span></code></pre></div>
 <p>Then use <code>./build.sh</code> command.</p>
 <p><strong>Watcher</strong></p>
 <p>So as to continuously update docs during making changes start watcher:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/usr/bin/env bash</span>
-<span class="ex">docker</span> run -it --rm -v <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/project nirname/documentary watcher</code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="co">#!/usr/bin/env bash</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a><span class="ex">docker</span> run -it --rm -v <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/project nirname/documentary watcher</span></code></pre></div>
 <h2 id="add-some-styles">Add Some Styles</h2>
 <p>All the <code>*.css</code> files will be automatically included.</p>
 <p>Download <a href="https://github.com/sindresorhus/github-markdown-css/blob/gh-pages/github-markdown.css">Github markdown styles</a>, for instance, and put them under <code>source</code> folder. Then build.</p>
 <h2 id="reveal.js">Reveal.js</h2>
 <p>If you would like to build <a href="https://revealjs.com">reveal.js</a> presentation, install reveal.js first. Do this under <code>website/docs</code> folder:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">wget</span> https://github.com/hakimel/reveal.js/archive/master.tar.gz
-<span class="fu">tar</span> -xzvf master.tar.gz
-<span class="fu">mv</span> reveal.js-master reveal.js
-<span class="fu">rm</span> master.tar.gz</code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="fu">wget</span> https://github.com/hakimel/reveal.js/archive/master.tar.gz</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a><span class="fu">tar</span> -xzvf master.tar.gz</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a><span class="fu">mv</span> reveal.js-master reveal.js</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a><span class="fu">rm</span> master.tar.gz</span></code></pre></div>
 <p>Then build presentation:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">docker</span> run --rm -v <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/project nirname/documentary documentary TO=revealjs</code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="ex">docker</span> run --rm -v <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/project nirname/documentary documentary TO=revealjs</span></code></pre></div>
 <p>If you are using watcher:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">docker</span> run -it --rm -v <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/project nirname/documentary watcher TO=revealjs</code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="ex">docker</span> run -it --rm -v <span class="va">$(</span><span class="bu">pwd</span><span class="va">)</span>:/project nirname/documentary watcher TO=revealjs</span></code></pre></div>
 <h2 id="examples">Examples</h2>
 <h3 id="embedded-images">Embedded images</h3>
 <p>To create embedded graph add specific class to a code block. Supported class name must coinside with one of Graphviz extenions: <code>dot neato fdp sfdp twopi circo</code></p>
@@ -164,55 +196,55 @@ seqdiag {
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+<!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: workflow Pages: 1 -->
 <svg width="288pt" height="116pt"
  viewBox="0.00 0.00 288.00 116.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
 <title>workflow</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-112 284,-112 284,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-112 284,-112 284,4 -4,4"/>
 <!-- markdown -->
 <g id="node1" class="node">
 <title>markdown</title>
-<polygon fill="none" stroke="#000000" points="92,-108 0,-108 0,-72 92,-72 92,-108"/>
-<text text-anchor="middle" x="46" y="-86.3" font-family="Times,serif" font-size="14.00" fill="#000000">markdown</text>
+<polygon fill="none" stroke="black" points="92,-108 0,-108 0,-72 92,-72 92,-108"/>
+<text text-anchor="middle" x="46" y="-86.3" font-family="Times,serif" font-size="14.00">markdown</text>
 </g>
 <!-- html -->
 <g id="node4" class="node">
 <title>html</title>
-<polygon fill="none" stroke="#000000" points="186,-36 114,-36 114,0 186,0 186,-36"/>
-<text text-anchor="middle" x="150" y="-14.3" font-family="Times,serif" font-size="14.00" fill="#000000">html</text>
+<polygon fill="none" stroke="black" points="186,-36 114,-36 114,0 186,0 186,-36"/>
+<text text-anchor="middle" x="150" y="-14.3" font-family="Times,serif" font-size="14.00">html</text>
 </g>
 <!-- markdown&#45;&gt;html -->
 <g id="edge1" class="edge">
 <title>markdown&#45;&gt;html</title>
-<path fill="none" stroke="#000000" d="M72.2436,-71.8314C85.2995,-62.7927 101.2535,-51.7476 115.3047,-42.0198"/>
-<polygon fill="#000000" stroke="#000000" points="117.5351,-44.7326 123.7648,-36.1628 113.5506,-38.9773 117.5351,-44.7326"/>
+<path fill="none" stroke="black" d="M71.44,-71.88C84.79,-62.89 101.32,-51.76 115.78,-42.03"/>
+<polygon fill="black" stroke="black" points="118.12,-44.68 124.46,-36.19 114.21,-38.87 118.12,-44.68"/>
 </g>
 <!-- graphviz -->
 <g id="node2" class="node">
 <title>graphviz</title>
-<polygon fill="none" stroke="#000000" points="189.5,-108 110.5,-108 110.5,-72 189.5,-72 189.5,-108"/>
-<text text-anchor="middle" x="150" y="-86.3" font-family="Times,serif" font-size="14.00" fill="#000000">graphviz</text>
+<polygon fill="none" stroke="black" points="189.5,-108 110.5,-108 110.5,-72 189.5,-72 189.5,-108"/>
+<text text-anchor="middle" x="150" y="-86.3" font-family="Times,serif" font-size="14.00">graphviz</text>
 </g>
 <!-- graphviz&#45;&gt;html -->
 <g id="edge2" class="edge">
 <title>graphviz&#45;&gt;html</title>
-<path fill="none" stroke="#000000" d="M150,-71.8314C150,-64.131 150,-54.9743 150,-46.4166"/>
-<polygon fill="#000000" stroke="#000000" points="153.5001,-46.4132 150,-36.4133 146.5001,-46.4133 153.5001,-46.4132"/>
+<path fill="none" stroke="black" d="M150,-71.7C150,-63.98 150,-54.71 150,-46.11"/>
+<polygon fill="black" stroke="black" points="153.5,-46.1 150,-36.1 146.5,-46.1 153.5,-46.1"/>
 </g>
 <!-- seqdiag -->
 <g id="node3" class="node">
 <title>seqdiag</title>
-<polygon fill="none" stroke="#000000" points="280,-108 208,-108 208,-72 280,-72 280,-108"/>
-<text text-anchor="middle" x="244" y="-86.3" font-family="Times,serif" font-size="14.00" fill="#000000">seqdiag</text>
+<polygon fill="none" stroke="black" points="280,-108 208,-108 208,-72 280,-72 280,-108"/>
+<text text-anchor="middle" x="244" y="-86.3" font-family="Times,serif" font-size="14.00">seqdiag</text>
 </g>
 <!-- seqdiag&#45;&gt;html -->
 <g id="edge3" class="edge">
 <title>seqdiag&#45;&gt;html</title>
-<path fill="none" stroke="#000000" d="M220.2798,-71.8314C208.5906,-62.8779 194.3312,-51.9558 181.7191,-42.2955"/>
-<polygon fill="#000000" stroke="#000000" points="183.7797,-39.4651 173.7126,-36.1628 179.5231,-45.0222 183.7797,-39.4651"/>
+<path fill="none" stroke="black" d="M220.76,-71.7C208.81,-62.8 194.08,-51.82 181.15,-42.2"/>
+<polygon fill="black" stroke="black" points="183.08,-39.27 172.97,-36.1 178.9,-44.88 183.08,-39.27"/>
 </g>
 </g>
 </svg>
@@ -251,11 +283,11 @@ seqdiag {
   <rect fill="moccasin" height="65" stroke="rgb(0,0,0)" width="8" x="508" y="200" />
   <rect fill="moccasin" height="65" stroke="rgb(0,0,0)" width="8" x="508" y="395" />
   <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="64" y="40" />
-  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="24" x="128" y="66">make</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="24" x="128.0" y="66">make</text>
   <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="256" y="40" />
-  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="36" x="320" y="66">pandoc</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="36" x="320.0" y="66">pandoc</text>
   <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="448" y="40" />
-  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="96" x="512" y="66">graphviz/seqdiag</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="96" x="512.0" y="66">graphviz/seqdiag</text>
   <path d="M 136 135 L 312 135" fill="none" stroke="rgb(0,0,0)" />
   <polygon fill="rgb(0,0,0)" points="304,131 312,135 304,139" stroke="rgb(0,0,0)" />
   <path d="M 328 200 L 504 200" fill="none" stroke="rgb(0,0,0)" />
@@ -268,18 +300,18 @@ seqdiag {
   <polygon fill="rgb(0,0,0)" points="496,391 504,395 496,399" stroke="rgb(0,0,0)" />
   <path d="M 136 460 L 504 460" fill="none" stroke="rgb(0,0,0)" />
   <polygon fill="rgb(0,0,0)" points="144,456 136,460 144,464" stroke="rgb(0,0,0)" />
-  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="48" x="164" y="133">markdown</text>
-  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="30" x="347" y="198">graph</text>
-  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="18" x="495" y="263">svg</text>
-  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="24" x="300" y="328">html</text>
-  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="30" x="155" y="393">graph</text>
-  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="18" x="495" y="458">svg</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="48" x="164.0" y="133">markdown</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="30" x="347.0" y="198">graph</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="18" x="495.0" y="263">svg</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="24" x="300.0" y="328">html</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="30" x="155.0" y="393">graph</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="18" x="495.0" y="458">svg</text>
 </svg>
 
 <h3 id="standalone-images">Standalone images</h3>
 <p>It might be convenient to keep your graph as a separate file in case it is too big for inline usage.</p>
 <p>To add external graph, create file with extension that reflects type of graph you would like to get. For example, create <code>formats.neato</code>.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">touch</span> source/formats.neato</code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a><span class="fu">touch</span> source/formats.svg</span></code></pre></div>
 <p>Copy and paste this to <code>formats.neato</code>:</p>
 <pre><code>```neato
 digraph Layouts {
@@ -292,16 +324,15 @@ digraph Layouts {
 <p>Paste following code to your <code>source/sample.md</code>:</p>
 <pre><code>![Supported Formats](formats.neato)</code></pre>
 <p>Result:</p>
-<div class="figure">
-<embed src="formats.svg" />
-<p class="caption">Supported Formats</p>
-</div>
+<figure>
+<img src="formats.svg" alt="" /><figcaption>Supported Formats</figcaption>
+</figure>
 <p>Layout of the image will be derived automatically by source file extension. <code>formats.neato</code> will be converted to <code>formats.svg</code> and all the links to it will be automatically changed in resulting HTML as well.</p>
-<p>So as to change layout of the graph change source file extension, e.g. <code>formats.circo</code>. Don't forget to change link to the graph to <code>![Supported Formats](formats.circo)</code>.</p>
+<p>So as to change layout of the graph change source file extension, e.g. <code>formats.circo</code>. Don’t forget to change link to the graph to <code>![Supported Formats](formats.circo)</code>.</p>
 <h2 id="local-installation">Local installation</h2>
 <p>Clone this project and remove <code>.git</code> folder:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> clone git@github.com:/nirname/documentary.git <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> documentary <span class="kw">&amp;&amp;</span> <span class="fu">rm</span> -rf .git</code></pre></div>
-<p>... or <a href="https://github.com/nirname/documentary/archive/master.zip">download it</a>.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true"></a><span class="fu">git</span> clone git@github.com:/nirname/documentary.git <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> documentary <span class="kw">&amp;&amp;</span> <span class="fu">rm</span> -rf .git</span></code></pre></div>
+<p>… or <a href="https://github.com/nirname/documentary/archive/master.zip">download it</a>.</p>
 <p>Install the requirements as follows.</p>
 <p>Pip:</p>
 <pre class="shell"><code>https://pip.readthedocs.io/en/stable/installing/</code></pre>
