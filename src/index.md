@@ -230,13 +230,13 @@ Paste following code to your `source/sample.md`:
 
 Result:
 
-![Supported Formats](formats.neato)
+![Supported Formats](formats.neato.svg)
 
 Layout of the image will be derived automatically by source file extension.
-`formats.neato` will be converted to `formats.svg` and all the links to it will be automatically changed in resulting HTML as well.
+`formats.neato` will be converted to `formats.neato.svg` and all the links to it will be automatically changed in resulting HTML as well.
 
 So as to change layout of the graph change source file extension, e.g. `formats.circo`.
-Don't forget to change link to the graph to `![Supported Formats](formats.circo)`.
+Don't forget to change link to the graph to `![Supported Formats](formats.circo.svg)`.
 
 ## Local installation
 
